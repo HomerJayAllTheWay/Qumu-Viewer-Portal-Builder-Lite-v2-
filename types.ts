@@ -3,25 +3,12 @@ export type ElementType = 'HTML' | 'MARKDOWN' | 'WIDGET';
 export type BreakpointKey = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'full';
 export type MenuItemType = 'HOME' | 'CUSTOM' | 'SMART_SEARCH' | 'FAVORITES';
 
-export type QumuVideoSourceType = 'SINGLE' | 'SEARCH' | 'LIST';
-
-export interface QumuVideoConfig {
-  sourceType: QumuVideoSourceType;
-  singleGuid?: string;
-  singleAlias?: string;
-  searchQuery?: string;
-  guidList?: string;
-  displayType: 'PLAYER' | 'GRID' | 'CAROUSEL' | 'VERTICAL' | 'THUMBNAIL';
-  size: number;
-}
-
 export interface PageElement {
   id: string;
   type: ElementType;
   title: string;
   content: string;
-  widgetType?: 'PLAYER' | 'GRID' | 'CAROUSEL'; // Legacy support
-  qumuConfig?: QumuVideoConfig;
+  widgetType?: 'PLAYER' | 'GRID' | 'CAROUSEL';
 }
 
 export interface MenuItem {
@@ -31,7 +18,6 @@ export interface MenuItem {
   type: MenuItemType;
   visible: boolean;
   searchQuery?: string;
-  widgetConfig?: any;
 }
 
 export interface HeaderSettings {
